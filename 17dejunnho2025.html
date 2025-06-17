@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Horários de voos das principais companhias aéreas brasileiras para hoje, terça-feira, 17 de junho de 2025." />
+  <meta name="keywords" content="horários de voos, Gol Linhas Aéreas, LATAM Airlines, Azul Linhas Aéreas, Avianca Brasil, voos nacionais, voos hoje" />
+  <meta name="author" content="Seu Nome ou Organização" />
+  <title>Horários de Voos - Companhias Aéreas Brasileiras | SeuSite</title>
+  <link rel="canonical" href="https://seusite.com/horarios-de-voos" />
+  <style>
+    
+    #iframe-wrapper {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      max-width: 400px;
+      height: 50vh; /* Altura relativa no desktop */
+      max-height: 400px;
+      z-index: 9999;
+      border-radius: 10px 0 0 0;
+      box-shadow: -2px -2px 12px rgba(0,0,0,0.3);
+      background-color: #fff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #iframe-fixo {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px 0 0 0;
+      display: block;
+    }
+
+    #close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      line-height: 32px;
+      text-align: center;
+      z-index: 10000;
+      display: none; /* Escondido inicialmente */
+      transition: background-color 0.3s ease;
+    }
+
+    #close-btn:hover {
+      background: rgba(255, 0, 0, 0.8);
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      #iframe-wrapper {
+        max-width: 100%;
+        height: 400px; /* Altura fixa menor */
+        border-radius: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      #iframe-fixo {
+        border-radius: 0;
+      }
+
+      #close-btn {
+        top: 6px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #004085;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Horários de Voos - Companhias Aéreas Brasileiras</h1>
+    <p>Confira os horários dos voos para hoje, terça-feira, 17 de junho de 2025.</p>
+  </header>
+  <main>
+    <h2>Azul Linhas Aéreas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Origem</th>
+          <th>Destino</th>
+          <th>Saída</th>
+          <th>Chegada</th>
+          <th>Frequência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AD-2800</td>
+          <td>Campinas</td>
+          <td>Fortaleza</td>
+          <td>19:45</td>
+          <td>21:00</td>
+          <td>Seg a Sex</td>
+        </tr>
+        <tr>
+          <td>AD-4082</td>
+          <td>Campinas</td>
+          <td>Fortaleza</td>
+          <td>20:20</td>
+          <td>21:40</td>
+          <td>Seg a Sex</td>
+        </tr>
+        <tr>
+          <td>AD-2674</td>
+          <td>Campinas</td>
+          <td>Fortaleza</td>
+          <td>20:30</td>
+          <td>21:50</td>
+          <td>Dom</td>
+        </tr>
+        <tr>
+          <td>AD-4219</td>
+          <td>Campinas</td>
+          <td>Porto Alegre</td>
+          <td>21:15</td>
+          <td>23:35</td>
+          <td>Seg a Dom</td>
+        </tr>
+        <tr>
+          <td>AD-4212</td>
+          <td>Campinas</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>21:40</td>
+          <td>22:55</td>
+          <td>Seg a Dom</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>LATAM Airlines</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Origem</th>
+          <th>Destino</th>
+          <th>Saída</th>
+          <th>Chegada</th>
+          <th>Frequência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JJ-3050</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>08:00</td>
+          <td>09:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>JJ-3052</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>10:00</td>
+          <td>11:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>JJ-3054</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>12:00</td>
+          <td>13:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>JJ-3056</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>14:00</td>
+          <td>15:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>JJ-3058</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>16:00</td>
+          <td>17:00</td>
+          <td>Diário</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Gol Linhas Aéreas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Origem</th>
+          <th>Destino</th>
+          <th>Saída</th>
+          <th>Chegada</th>
+          <th>Frequência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>G3-1010</td>
+          <td>São Paulo (Congonhas)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>06:00</td>
+          <td>07:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>G3-1012</td>
+          <td>São Paulo (Congonhas)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>08:00</td>
+          <td>09:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>G3-1014</td>
+          <td>São Paulo (Congonhas)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>10:00</td>
+          <td>11:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>G3-1016</td>
+          <td>São Paulo (Congonhas)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>12:00</td>
+          <td>13:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>G3-1018</td>
+          <td>São Paulo (Congonhas)</td>
+          <td>Rio de Janeiro (Santos Dumont)</td>
+          <td>14:00</td>
+          <td>15:00</td>
+          <td>Diário</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Avianca Brasil</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Origem</th>
+          <th>Destino</th>
+          <th>Saída</th>
+          <th>Chegada</th>
+          <th>Frequência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>O6-6010</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Brasília</td>
+          <td>07:00</td>
+          <td>08:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>O6-6012</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Brasília</td>
+          <td>09:00</td>
+          <td>10:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+        <tr>
+          <td>O6-6014</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Brasília</td>
+          <td>11:00</td>
+          <td>12:00</td>
+          <td>Diário</td>
+        </tr>
+        <tr>
+          <td>O6-6016</td>
+          <td>São Paulo (Guarulhos)</td>
+          <td>Brasília</td>
+          <td>13:00</td>
+          <td>14:00</td>
+          <td>Diário</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <div id="iframe-wrapper" role="region" aria-label="Anúncio fixo">
+  <button id="close-btn" aria-label="Fechar anúncio">×</button>
+  <iframe
+    id="iframe-fixo"
+    src="modelo.html"
+    title="Anúncio Fixo Responsivo"
+    loading="lazy"
+    ></iframe>
+</div>
+
+<script>
+  // Espera 10 segundos para exibir o botão de fechar
+  setTimeout(() => {
+    document.getElementById("close-btn").style.display = "block";
+  }, 10000);
+
+  // Ação do botão para fechar o iframe
+  document.getElementById("close-btn").addEventListener("click", () => {
+    document.getElementById("iframe-wrapper").style.display = "none";
+  });
+</script>
+  <footer>
+    
+  </footer>
+</body>
+</html>
+
