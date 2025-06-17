@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Site oficial para informações sobre voos nacionais e internacionais. Saiba sobre companhias aéreas, dicas de viagem e notícias do setor aéreo." />
+  <meta name="keywords" content="voos, informações de voo, companhias aéreas, viagens, aeroportos" />
+  <meta name="author" content="Seu Nome ou Organização" />
+  <title>Informações de Voos Nacionais e Internacionais | SeuSite</title>
+  <link rel="canonical" href="https://seusite.com/" />
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f4f7fb;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #003366;
+      color: #f0f4f8;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.3rem;
+      font-weight: 300;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+      color: #cbd5e1;
+    }
+
+    main {
+      flex: 1;
+      max-width: 960px;
+      margin: 40px auto 60px;
+      padding: 0 20px 40px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.07);
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #003366;
+      border-bottom: 4px solid #007bff;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+      color: #444;
+      line-height: 1.55;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+      margin-bottom: 40px;
+    }
+
+    thead {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      font-size: 1rem;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #e2e8f0;
+      background-color: #f9fbff;
+      transition: background-color 0.3s ease;
+    }
+
+    tbody tr:hover {
+      background-color: #dbe9ff;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    /* Botão fechar iframe */
+    #iframe-wrapper {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      max-width: 400px;
+      height: 50vh;
+      max-height: 400px;
+      z-index: 9999;
+      border-radius: 10px 0 0 0;
+      box-shadow: -2px -2px 12px rgba(0,0,0,0.3);
+      background-color: #fff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s ease;
+    }
+
+    #iframe-fixo {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px 0 0 0;
+      display: block;
+    }
+
+    #close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 22px;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      line-height: 34px;
+      text-align: center;
+      z-index: 10000;
+      display: none;
+      transition: background-color 0.3s ease;
+    }
+
+    #close-btn:hover {
+      background: rgba(220, 53, 69, 0.9);
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      #iframe-wrapper {
+        max-width: 100%;
+        height: 350px;
+        border-radius: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      #iframe-fixo {
+        border-radius: 0;
+      }
+
+      #close-btn {
+        top: 6px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      main {
+        margin: 20px 10px 60px;
+        padding: 0 15px 30px;
+      }
+
+      header h1 {
+        font-size: 1.9rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+      background-color: #e9ecef;
+      border-top: 1px solid #d3dce6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bem-vindo ao SeuSite de Informações de Voos</h1>
+    <p>Seu portal completo para voos nacionais e internacionais, dicas e notícias do setor aéreo.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Sobre Nós</h2>
+      <p>Oferecemos informações confiáveis e atualizadas sobre companhias aéreas, aeroportos, dicas de viagem e muito mais para facilitar seu planejamento.</p>
+      <p>Nosso objetivo é conectar passageiros com dados precisos para que suas viagens sejam sempre tranquilas e seguras.</p>
+    </section>
+
+    <section>
+      <h2>Horários de Voos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Companhia Aérea</th>
+            <th>Link para Horários de Voos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Varig</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>TAM Airlines</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Gol Linhas Aéreas</td>
+            <td><a href="#">voo</a></td>
+          </tr>
+          <tr>
+            <td>Azul Linhas Aéreas</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>História das Principais Companhias Aéreas Brasileiras</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Companhia</th>
+            <th>Fundada</th>
+            <th>História Resumida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Varig</td>
+            <td>1927</td>
+            <td>Primeira companhia aérea do Brasil, foi líder no mercado por décadas. Encerrou as operações em 2006.</td>
+          </tr>
+          <tr>
+            <td>TAM Airlines</td>
+            <td>1976</td>
+            <td>Começou como empresa regional e se tornou a maior do país. Em 2012, uniu-se à LAN, formando a LATAM.</td>
+          </tr>
+          <tr>
+            <td>Gol Linhas Aéreas</td>
+            <td>2001</td>
+            <td>Criada como low-cost, revolucionou o mercado brasileiro com preços competitivos.</td>
+          </tr>
+          <tr>
+            <td>Azul Linhas Aéreas</td>
+            <td>2008</td>
+            <td>Fundada por David Neeleman, cresceu rápido e se destacou pela frota moderna e foco regional.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 SeuSite. Todos os direitos reservados.
+  </footer>
+
+  <div id="iframe-wrapper" role="region" aria-label="Anúncio fixo">
+    <button id="close-btn" aria-label="Fechar anúncio">×</button>
+    <iframe
+      id="iframe-fixo"
+      src="https://remarkable-gelato-4db597.netlify.app/modeloanuncio.html"
+      title="Anúncio Fixo Responsivo"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <script>
+    // Espera 10 segundos para exibir o botão de fechar
+    setTimeout(() => {
+      document.getElementById("close-btn").style.display = "block";
+    }, 10000);
+
+    // Ação do botão para fechar o iframe
+    document.getElementById("close-btn").addEventListener("click", () => {
+      const wrapper = document.getElementById("iframe-wrapper");
+      wrapper.style.opacity = "0";
+      setTimeout(() => wrapper.style.display = "none", 300);
+    });
+  </script>
+</body>
+</html>
